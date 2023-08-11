@@ -34,7 +34,7 @@
 ### bitpingd (CLI version)
 - For **MacOS or Linux**, simply run:
   ```bash
-  curl https://releases.bitping.com/bitpingd/install.sh | sh
+  curl https://releases.bitping.com/bitpingd/install.sh | bash
   ```
   - To run without a display: `bitpingd`
   - For visualizing Jobs performed, current balance, uptime, and more: `bitpingd run --display`
