@@ -7,7 +7,7 @@
   - **Bitping Desktop**: A user-friendly graphical interface for your desktop or laptop.
   - **bitpingd (for CLI)**: A robust and clear command-line interface for servers.
 - **CalVer Versioning**: The versioning system follows the Calendar Versioning format (YY.M.DD-buildnumber).
-- **Lower resource usage**: Compared to the old node, the new Bitping Node is more efficient and consumes fewer resources.
+- **Lower resource usage**: Compared to the old node, the new Bitpingd Node is more efficient and consumes fewer resources.
 - **Clearer CLI flags**: `bitpingd` now has a more organized and understandable set of CLI flags. Check them out using `bitpingd --help`.
 - **Service installation**: Easily install `bitpingd` as a service with the commands `bitpingd service install && bitpingd service start`. Compatibility includes Launchd on Mac and Systemd, initd, and openrc on Linux.
 
