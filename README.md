@@ -27,10 +27,6 @@
   1. Download the MSI from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
   2. Follow the installation steps.
 
-- **Linux**:
-  1. We recommend downloading the AppImage file from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
-  2. There's also a .deb file available, but it's not extensively tested, especially for auto-updates.
-
 ### bitpingd (CLI version)
 - For **MacOS or Linux**, simply run:
   ```bash
