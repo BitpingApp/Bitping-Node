@@ -32,8 +32,8 @@
   ```bash
   curl https://bitping.com/install.sh | bash
   ```
-  - To run without a display: `bitpingd`
-  - For visualizing Jobs performed, current balance, uptime, and more: `bitpingd run --display`
+  - To run the node with a display: `bitpingd`
+  - To run the node in the background: `bitpingd service install && bitpingd service start`
 
 ## Support
 
