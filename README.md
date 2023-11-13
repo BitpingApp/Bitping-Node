@@ -16,7 +16,7 @@
 ## Installation
 
 ### Bitping Desktop
-- **MacOS**:
+- **MacOS 11.0+**:
   1. Download the DMG from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
   2. After installation, unquarantine with the command:
      ```bash
@@ -24,7 +24,7 @@
      ```
   3. Open Bitping Desktop from your Applications folder
 
-- **Windows**:
+- **Windows 10+**:
   1. Download the MSI from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
   2. Follow the installation steps.
   3. After installation, go to your start menu and click Bitping Desktop
