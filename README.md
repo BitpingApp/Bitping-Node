@@ -22,10 +22,12 @@
      ```bash
      xattr -d com.apple.quarantine /Applications/Bitping\ Desktop.app
      ```
+  3. Open Bitping Desktop from your Applications folder
 
 - **Windows**:
   1. Download the MSI from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
   2. Follow the installation steps.
+  3. After installation, go to your start menu and click Bitping Desktop
 
 ### bitpingd (CLI version)
 - For **MacOS or Linux**, simply run:
