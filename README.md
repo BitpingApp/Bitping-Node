@@ -33,7 +33,7 @@
   - To run the node with a display: `bitpingd`
   - To run the node in the background:
       - `bitpingd service install && bitpingd service start`
-      - `sudo loginctl enable-linger YOUR_USERNAME` This command will keep your node running in the background when you log out
+      - `sudo loginctl enable-linger $(whoami)` This command will keep your node running in the background when you log out
   - If you are setting up bitpingd as root, you will need to run:
       - `bitpingd service install --system && bitpingd service start --system`
 
