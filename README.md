@@ -13,6 +13,7 @@
 
 > 🚫 **Important**:
 > It's not recommended to run both `bitpingd` and Bitping Desktop on the same machine as it may flag your nodes as spam in the network.
+> 
 > Do not run multiple `bitpingd` or Bitping Desktop instances on the same machine when they are pointing to the same credentials directory (`~/.bitpingd`, `~/.bitping` or Docker volume)
 
 ## Installation
