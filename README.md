@@ -30,12 +30,34 @@
   ```bash
   curl https://bitping.com/install.sh | bash
   ```
-  - To run the node with a display: `bitpingd`
+  - To run the node with a display: 
+    ```bash
+    bitpingd
+    ```
   - To run the node in the background:
-      - `bitpingd service install && bitpingd service start`
-      - `sudo loginctl enable-linger $(whoami)` This command will keep your node running in the background when you log out
+      - ```bash 
+        bitpingd service install && bitpingd service start
+        ```
+      - This command will keep your node running in the background when you log out
+        ```bash
+        sudo loginctl enable-linger $(whoami)
+        ```
   - If you are setting up bitpingd as root, you will need to run:
-      - `bitpingd service install --system && bitpingd service start --system`
+      - ```bash 
+           bitpingd service install --system && bitpingd service start --system
+        ```
+- For Bitpingd on **Docker**:
+  - To run the container in interactive mode:
+    - ```bash 
+        docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+      ```
+  - To run the container and pass email and password via CLI instead of an interactive session run:  
+    - ```bash 
+        docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd --entrypoint /app/bitpingd bitping/bitpingd:latest login --email "YOUR_BITPING_EMAIL" --password "YOUR_BITPING_PASSWORD"
+      ```
+    - ```bash 
+        docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+      ```
 
 ## Support
 
