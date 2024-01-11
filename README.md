@@ -55,9 +55,9 @@ You can then follow the step by step instructions below dependent on your operat
     bitpingd
     ```
 4. If you are setting up the bitpingd service as **root/sudo**, you will need to run:
-        ```bash 
-        bitpingd service install --system && bitpingd service start --system
-        ```
+    ```bash 
+    bitpingd service install --system && bitpingd service start --system
+    ```
 5. To run the node in the background as an unpriveliged user:
       - ```bash 
         bitpingd service install && bitpingd service start
@@ -81,9 +81,9 @@ You can then follow the step by step instructions below dependent on your operat
     bitpingd
     ```
 4. If you are setting up the bitpingd service as **root/sudo**, you will need to run:
-        ```bash 
-        bitpingd service install --system && bitpingd service start --system
-        ```
+    ```bash 
+    bitpingd service install --system && bitpingd service start --system
+    ```
 5. To run the node in the background as an unpriveliged user:
       - ```bash 
         bitpingd service install && bitpingd service start
