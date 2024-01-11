@@ -18,26 +18,47 @@
 
 ## Installation
 
-### Bitping Desktop
-- **MacOS 11.0+**:
-  1. Download the DMG from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
-  2. Open Bitping Desktop from your Applications folder
+Running a node with Bitping is easy, be sure to have an account created [here](https://app.bitping.com/register)
 
-- **Windows 10+**:
-  1. Download the MSI from the [GitHub releases page](https://github.com/BitpingApp/Bitping-Node/releases).
-  2. Follow the installation steps.
+Then navigate to the node Install/Update page in the [Bitping Dashboard](https://app.bitping.com/update)
+
+You can then follow the step by step instructions below dependent on your operating system and install method.
+
+### Bitping Desktop
+
+#### MacOS 11.0+ Desktop
+  1. Navigate to the [Bitping Install page](https://app.bitping.com/update).
+  2. Based on which chipset you have, choose either Intel or Apple Silicon and click the download button.
+  3. Navigate to your Downloads folder in Finder and double click on the Bitping Desktop DMG
+  4. Drag the Bitping Desktop icon to your Applications folder
+  5. Open Bitping Desktop from your Applications folder
+
+#### Windows 10+ Desktop
+  1. Navigate to the [Bitping Install page](https://app.bitping.com/update).
+  2. Click on the Download button for the Desktop application.
+  3. Open your downloads folder and double click on the MSI and follow the installation steps.
   3. After installation, go to your start menu and click Bitping Desktop
 
-### bitpingd (CLI version)
-- For **MacOS or Linux**, simply run:
-  ```bash
-  curl https://bitping.com/install.sh | bash
-  ```
-  - To run the node with a display: 
+### Bitpingd
+
+#### Linux CLI
+1. Install the bitpingd binary with the following script:
+    ```bash
+    curl https://bitping.com/install.sh | bash
+    ```
+2. Login to the Bitping network:
+    ```bash
+    bitpingd login
+    ```
+3. To run the node with a display: 
     ```bash
     bitpingd
     ```
-  - To run the node in the background:
+4. If you are setting up the bitpingd service as **root/sudo**, you will need to run:
+        ```bash 
+        bitpingd service install --system && bitpingd service start --system
+        ```
+5. To run the node in the background as an unpriveliged user:
       - ```bash 
         bitpingd service install && bitpingd service start
         ```
@@ -45,21 +66,40 @@
         ```bash
         sudo loginctl enable-linger $(whoami)
         ```
-  - If you are setting up bitpingd as root, you will need to run:
-      - ```bash 
-           bitpingd service install --system && bitpingd service start --system
+        
+#### MacOS CLI
+1. Install the bitpingd binary with the following script:
+    ```bash
+    curl https://bitping.com/install.sh | bash
+    ```
+2. Login to the Bitping network:
+    ```bash
+    bitpingd login
+    ```
+3. To run the node with a display: 
+    ```bash
+    bitpingd
+    ```
+4. If you are setting up the bitpingd service as **root/sudo**, you will need to run:
+        ```bash 
+        bitpingd service install --system && bitpingd service start --system
         ```
-- For Bitpingd on **Docker**:
-  - To run the container in interactive mode:
-    - ```bash 
-        docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+5. To run the node in the background as an unpriveliged user:
+      - ```bash 
+        bitpingd service install && bitpingd service start
+        ```
+
+#### Docker
+1. To run the container in interactive mode:
+    ```bash 
+    docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+    ```
+2. To run the container and pass email and password via CLI instead of an interactive session run:  
+    - ```bash
+      docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd --entrypoint /app/bitpingd bitping/bitpingd:latest login --email "YOUR_BITPING_EMAIL" --password "YOUR_BITPING_PASSWORD"
       ```
-  - To run the container and pass email and password via CLI instead of an interactive session run:  
     - ```bash 
-        docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd --entrypoint /app/bitpingd bitping/bitpingd:latest login --email "YOUR_BITPING_EMAIL" --password "YOUR_BITPING_PASSWORD"
-      ```
-    - ```bash 
-        docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+      docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
       ```
 
 ## Support
