@@ -90,18 +90,21 @@ You can then follow the step by step instructions below dependent on your operat
         ```
 
 #### Docker
-1. To run the container in interactive mode:
-    ```bash 
-    docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
-    ```
-2. To run the container and pass email and password via CLI instead of an interactive session run:  
-    - ```bash
-      docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd --entrypoint /app/bitpingd bitping/bitpingd:latest login --email "YOUR_BITPING_EMAIL" --password "YOUR_BITPING_PASSWORD"
-      ```
-    - ```bash 
-      docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
-      ```
+##### Option 1. To run the container in interactive mode: 
+   ```
+   bash docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+   ```
 
+##### Option 2. To run the container and pass email and password via CLI instead of an interactive session run:  
+  1. Log in to your account with the following command:
+       ```bash
+       docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd --entrypoint /app/bitpingd bitping/bitpingd:latest login --email "YOUR_BITPING_EMAIL" --password "YOUR_BITPING_PASSWORD"
+       ```
+  2. Now start the bitping node!
+       ```bash 
+       docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
+       ```
+       
 ## Support
 
 If you encounter any issues or need further guidance, please:
