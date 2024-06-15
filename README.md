@@ -1,4 +1,4 @@
-# Bitping Node (Public Beta)
+# Bitping Node
 
 ## 🌟 Features
 - **Auto-updates**: No need to manually check and install updates. The Bitping Node will download an update, check the signature and then auto install itself, meaning maintenance of your node is hands off.
