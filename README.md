@@ -16,6 +16,18 @@
 > 
 > Do not run multiple `bitpingd` or Bitping Desktop instances on the same machine when they are pointing to the same credentials directory (`~/.bitpingd`, `~/.bitping` or Docker volume)
 
+## Recommendations
+
+#### Passive Income while actively using your computer
+Use Bitping Desktop on MacOS and Windows. 
+Bitping Desktop does not explicitly run in the background while you are logged out of your computer.
+The Idea of Bitping Desktop is to have you passively earn income while you're going about your daily activities on your computer/laptop.
+
+#### Constant Passive Income 
+Use Bitpingd on Linux.
+Bitpingd is built to be run as a system daemon either via Systemd, Launchd or Docker. 
+It will run in the background even while your user account is logged out. 
+
 ## Installation
 
 Running a node with Bitping is easy, be sure to have an account created [here](https://app.bitping.com/register)
