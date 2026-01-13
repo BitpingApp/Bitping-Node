@@ -101,6 +101,77 @@ You can then follow the step by step instructions below dependent on your operat
         bitpingd service install && bitpingd service start
         ```
 
+#### NixOS / Nix
+
+This repository includes a Nix flake for declarative installation on NixOS and other Nix-enabled systems.
+
+##### Quick Install (nix profile)
+```bash
+nix profile install github:BitpingApp/Bitping-Node
+```
+
+##### Run without installing
+```bash
+nix run github:BitpingApp/Bitping-Node
+```
+
+##### NixOS Module (flake-based configuration)
+
+Add the flake to your `flake.nix` inputs:
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    bitping.url = "github:BitpingApp/Bitping-Node";
+  };
+
+  outputs = { self, nixpkgs, bitping, ... }: {
+    nixosConfigurations.myhost = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        bitping.nixosModules.default
+        {
+          services.bitpingd.enable = true;
+        }
+      ];
+    };
+  };
+}
+```
+
+##### Initial Login
+
+Before enabling the service, you need to log in to create credentials:
+```bash
+# Run interactively to log in
+nix run github:BitpingApp/Bitping-Node -- login
+
+# Copy credentials to the service data directory
+sudo mkdir -p /var/lib/bitpingd
+sudo cp -r ~/.bitpingd/* /var/lib/bitpingd/
+sudo chown -R bitpingd:bitpingd /var/lib/bitpingd
+```
+
+##### Module Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `services.bitpingd.enable` | bool | `false` | Enable the bitpingd service |
+| `services.bitpingd.user` | string | `"bitpingd"` | User to run the service as |
+| `services.bitpingd.group` | string | `"bitpingd"` | Group to run the service as |
+| `services.bitpingd.dataDir` | path | `/var/lib/bitpingd` | Data directory for credentials |
+| `services.bitpingd.extraArgs` | list | `[]` | Extra CLI arguments |
+
+##### Updating the Flake
+
+To get the latest version with updated hashes:
+```bash
+git clone https://github.com/BitpingApp/Bitping-Node
+cd Bitping-Node
+chmod +x update.sh
+./update.sh
+```
+
 #### Docker
 ##### Option 1. To run the container in interactive mode: 
    ```bash
